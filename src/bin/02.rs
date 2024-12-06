@@ -72,10 +72,10 @@ mod tests {
     use super::*;
     #[test]
     fn test_part_one() {
-        assert_eq!(part_one(&aoc::template::read_file("examples", 2)), None);
+        assert_eq!(part_one(&aoc::template::read_file("examples", 2)), Some(2));
     }
     #[test]
     fn test_part_two() {
-        assert_eq!(part_two(&aoc::template::read_file("examples", 2)), None);
+        assert_eq!(part_two(&aoc::template::read_file("examples", 2)), Some(4));
     }
 }
