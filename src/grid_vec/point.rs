@@ -81,6 +81,10 @@ impl Point {
     pub fn sw(self) -> Self {
         self.s().w()
     }
+
+    pub fn bounded_by(&self, other: &Self) -> bool {
+        self.i <= other.i && self.j <= other.j
+    }
 }
 
 #[macro_export]

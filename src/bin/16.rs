@@ -22,7 +22,7 @@ fn dijkstra(grid: &Grid, start: Point) -> (Visited, Prev) {
     let mut visited: Visited = HashMap::new();
 
     let mut bh = BinaryHeap::new();
-    bh.push(Reverse((0, start, Direction::EAST, start, Direction::EAST)));
+    bh.push(Reverse((0, start, Direction::E, start, Direction::E)));
 
     while let Some(Reverse((len, loc, dir, ploc, pdir))) = bh.pop() {
         let best = visited.entry((loc, dir)).or_insert(usize::MAX);
