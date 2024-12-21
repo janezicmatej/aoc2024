@@ -32,6 +32,11 @@ const KEYPAD: [(u8, [Option<(u8, u8)>; 3]); 5] = [
     (b'A', [Some((b'^', b'<')), Some((b'>', b'v')), None]),
 ];
 
+#[cached(
+    ty = "SizedCache<String, Vec<VecDeque<u8>>>",
+    create = "{ SizedCache::with_size(150) }",
+    convert = r#"{ format!("{}{s}{e}", graph.len()) }"#
+)]
 fn bfs(graph: &HashMap<u8, Vec<(u8, u8)>>, s: u8, e: u8) -> Vec<VecDeque<u8>> {
     let mut res = Vec::new();
 
