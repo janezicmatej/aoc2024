@@ -89,7 +89,7 @@ impl Point {
 
 #[macro_export]
 macro_rules! pnt {
-    ($i:literal, $j:literal) => {
+    ($i:expr, $j:expr) => {
         Point { i: $i, j: $j }
     };
 }

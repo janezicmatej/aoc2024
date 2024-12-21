@@ -43,7 +43,7 @@ impl Display for Grid {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         for (idx, cell) in self.grid.iter().enumerate() {
             write!(f, "{}", *cell as char)?;
-            if idx > 0 && idx % self.width == 0 {
+            if idx > 0 && (idx + 1) % self.width == 0 {
                 writeln!(f)?;
             }
         }
@@ -77,10 +77,20 @@ impl Grid {
     }
 
     pub fn get(&self, p: &Point) -> Option<&u8> {
+        if p.i >= self.grid.len() / self.width || p.j >= self.width {
+            return None;
+        }
         self.grid.get(p.i * self.width + p.j)
     }
 
     pub fn get_mut(&mut self, p: &Point) -> Option<&mut u8> {
+        if p.i >= self.grid.len() / self.width || p.j >= self.width {
+            return None;
+        }
         self.grid.get_mut(p.i * self.width + p.j)
+    }
+
+    pub fn size(&self) -> (usize, usize) {
+        (self.grid.len() / self.width, self.width)
     }
 }
