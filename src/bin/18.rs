@@ -91,4 +91,3 @@ pub fn part_two(input: &str) -> Option<String> {
 }
 
 aoc::solution!(18);
-

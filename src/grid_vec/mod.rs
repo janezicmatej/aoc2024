@@ -1,9 +1,7 @@
-mod grid;
 mod direction;
+mod grid;
 mod point;
 
-pub use grid::Grid;
 pub use direction::Direction;
+pub use grid::Grid;
 pub use point::Point;
-
-

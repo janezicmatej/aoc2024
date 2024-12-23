@@ -200,10 +200,16 @@ mod tests {
     use super::*;
     #[test]
     fn test_part_one() {
-        assert_eq!(part_one(&aoc::template::read_file("examples", 15)), Some(10092));
+        assert_eq!(
+            part_one(&aoc::template::read_file("examples", 15)),
+            Some(10092)
+        );
     }
     #[test]
     fn test_part_two() {
-        assert_eq!(part_two(&aoc::template::read_file("examples", 15)), Some(9021));
+        assert_eq!(
+            part_two(&aoc::template::read_file("examples", 15)),
+            Some(9021)
+        );
     }
 }

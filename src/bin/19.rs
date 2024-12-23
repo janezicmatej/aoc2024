@@ -66,6 +66,9 @@ mod tests {
     }
     #[test]
     fn test_part_two() {
-        assert_eq!(part_two(&aoc::template::read_file("examples", 19)), Some(16));
+        assert_eq!(
+            part_two(&aoc::template::read_file("examples", 19)),
+            Some(16)
+        );
     }
 }
